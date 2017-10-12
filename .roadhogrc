@@ -1,0 +1,23 @@
+{
+  "entry": "src/index.js",
+  "disableCSSModules": false,
+  "autoprefixer": null,
+  "proxy":{
+            "/api": {
+              "target": "http://10.33.4.101:10011/",
+              "changeOrigin": true,
+              "pathRewrite": { "^/api" : "" }
+            }
+          },
+  "extraBabelPlugins": [
+    "transform-runtime",
+     ["import", { "libraryName": "antd", "style": "css" }]
+  ],
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr"
+      ]
+    }
+  }
+}
